@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Components</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+ <!-- <link rel="stylesheet" href="styles.css">-->
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand btn-light btn-lg" href="landing.html">Latitude</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="LatvTemp.html">Max Temperature</a>
+            <a class="dropdown-item" href="LatvHmd.html">Humidity</a>
+            <a class="dropdown-item" href="LatvCloud.html">Cloudniess</a>
+            <a class="dropdown-item" href="LatvWind.html">Wind Speed</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="comparison.html">Comparison <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container-fluid">
+    <div class="row">
+          <div class="col-sm-4 col-md-8">
+          <div class = "box box-1">
+            <h1>Summary: Latitude vs. X</h1>
+            <hr>
+              <img src="assets/images/LatvTemp.png" alt="Humidity Map" class="img-fluid" width="400">
+                  <p> The purpose of this project was to analyze how weather patterns may change and alter as one travels closer to the equator</p>
+                  
+                  <p> Assigning 1,500 random Latitude and Longitudes, I utilized the Python CitiPy library to find
+                      the city closest to the Lat/Lon (dropping all duplicates) to get a listing of over 600 cities.
+                      I utilized OpenWeatherMapAPI to get the weather for the cities (dropping cities with no data)
+                      to create a dataframe of weather information for over 500 cities. 
+                  </p>
+
+                  <p>
+                      The dataframe is saved to CSV and the data is analyzed across the three climate zones (Tropical 
+                      Zone, Temperate Zone, and Polar Zone).  To showcase the relationship between latitude and 
+                      temperature/humidity/cloudiness/wind speed I utilize MatplotLib scatter plots to view:
+                  </p> 
+          </div>
+          </div>
+          <div class="box box-2">
+              <div class = "col-sm-6 col-md-12">
+                <h1>Visualizations</h1>
+                <hr>
+
+              <div class = "row">
+                <div class = "col-xs-6 col-sm-3 col-md-6">
+                  <figure>
+                    <a href = "LatvTemp.html">
+                    <img src="assets/images/LatvTemp.png"  alt="Temp Map" class="img-fluid">
+                    <a>
+                  </figure>
+                </div>
+
+              <!-- <div class = "col-md-3"></div> -->
+                <div class = "col-xs-6 col-sm-3 col-md-6">
+                  <figure>
+                  <a href = "LatvHmd.html">
+                    <img src="assets/images/LatvHmd.png" alt="Humidity Map" class="img-fluid">
+                  </a>
+                  </figure>  
+                </div>
+
+              </div>
+              
+
+              <div class = "row">
+                <div class = "col-xs-6 col-sm-3 col-md-6">
+                  <figure>
+                  <a href = "LatvCloud.html">
+                    <img src="assets/images/LatvCloud.png" alt="Cloud Map" class="img-fluid">
+                  </a>
+                  </figure>
+                </div>
+                
+
+                <div class = "col-xs-6 col-sm-3 col-md-6">
+                  <figure>
+                      <a href = "LatvCloud.html">
+                      <img id src="assets/images/LatvWind.png"  alt="Wind Map" class="img-fluid">
+                      </a>
+                  </figure>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+</body>
+
+</html>
